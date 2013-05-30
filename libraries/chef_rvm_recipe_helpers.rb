@@ -145,6 +145,7 @@ class Chef
           source      "rvmrc.erb"
           owner       opts[:user] || "root"
           mode        "0644"
+          cookbook    "rvm"
           variables   :system_install   => system_install,
                       :rvm_path         => rvm_path,
                       :rvm_gem_options  => opts[:rvm_gem_options],
