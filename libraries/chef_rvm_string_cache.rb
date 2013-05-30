@@ -75,6 +75,7 @@ class Chef
         stdin.puts(cmd)
         stdin.close
         output = stdout.read()
+        Chef::Log.debug("stderr: #{stderr.read()}")
         Chef::Log.debug("Output was: #{output}")
         Chef::Log.debug("Output first line was: #{output.split('\n').first}")
         result = output.split('\n').first.chomp
