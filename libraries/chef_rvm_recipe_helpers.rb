@@ -90,7 +90,7 @@ class Chef
           not_if  rvm_installed_check, :environment => exec_env
         end
         Chef::Log.debug("In install_rvm install_now was #{install_now} command is #{install_command} install user is #{install_user} env is #{exec_env}")
-        Chef::Log.debug("Install check: #{rvm_installed_check(:environment => exec_env)}")
+        Chef::Log.debug("Install check: #{rvm_installed_check}, environment #{exec_env}")
         i.run_action(:run) if install_now
       end
 
