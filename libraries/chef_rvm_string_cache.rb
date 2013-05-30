@@ -70,6 +70,7 @@ class Chef
         cmd = ["source #{find_profile_to_source(user_dir)}",
           "rvm_ruby_string='#{str}'", "__rvm_ruby_string",
           "echo $rvm_ruby_string"].join(" && ")
+        Chef::Log.debug("The command I am running is: #{cmd}")
         pid, stdin, stdout, stderr = popen4('bash', shell_params(user, user_dir))
         stdin.puts(cmd)
         stdin.close
